@@ -3,26 +3,25 @@ import MovieCard from "../../components/Moviecard/MovieCard";
 import './Home.css';
 import { searchMovie } from "../../api/omdb";
 import { useEffect, useState } from "react";
+
+
 function Home(){
 
     const [movieList,setMovieList] = useState([]);
 
-    // async function downloadDefaultMovies(...args){
-        
+    // async function downloadDefaultMovies(...args){  
     //     const urls = args.map((movies)=> searchMovie(movies));
     //     const response = await axios.all(urls.map(url => axios.get(url)));
-      
     //    const movies = response.map((movieResponse)=>(movieResponse.data.Search));
-      
     //    setMovieList([[].concat(...movies)]);
     // }
+
     async function downloadDefaultMovies(...args) {
         const urls = args.map((movies) => searchMovie(movies));
         const response = await axios.all(urls.map(url => axios.get(url)));
         
         // Flatten the array of arrays into a single array
-        const movies = response.flatMap((movieResponse) => movieResponse.data.Search || []);
-        
+        const movies = response.flatMap((movieResponse) => movieResponse.data.Search || []); 
         setMovieList(movies); // Set the flat array directly
     }
 
