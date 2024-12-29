@@ -20,7 +20,7 @@ function Home(){
             <div className="movie-card-wrapper">
             {movieList && movieList.length > 0 ? (
                 movieList.map((movie) => (
-                    <MovieCard key={movie.imdbID} {...movie} />
+                    <MovieCard key={movie.imdbID} {...movie} id={movie.imdbID} />
                 ))
             ) : (
                 <p>No movies found.</p>
