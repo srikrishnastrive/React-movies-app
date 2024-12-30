@@ -1,5 +1,5 @@
 
-import MovieCard from "../../components/Moviecard/MovieCard";
+import MovieCard from "../../components/MovieCard/MovieCard";
 import './Home.css';
 
 import useMovieList from "../../hooks/useMovieList";

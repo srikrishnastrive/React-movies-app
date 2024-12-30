@@ -3,7 +3,7 @@ import './MovieDetails.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { searchMovieById } from '../../api/omdb';
-import MovieCard from '../../components/Moviecard/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 
