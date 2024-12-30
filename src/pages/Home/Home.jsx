@@ -16,7 +16,7 @@ function Home(){
    
     return (
         <>
-            <h1>Home page</h1>
+          
             <div className="movie-card-wrapper">
             {movieList && movieList.length > 0 ? (
                 movieList.map((movie) => (

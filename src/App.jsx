@@ -3,15 +3,22 @@ import { useState } from 'react'
 import './App.css'
 import MainRoutes from './routes/MainRoutes';
 import Navbar from './components/NavBar/Navbar';
+import ThemeContext from './context/ThemeContext';
 
 function App() {
-  const [count, setCount] = useState(0)
-  console.log(import.meta.env.VITE_API_KEY);
+  const [theme,setTheme] = useState('dark');
+
+
 
   return (
     <>
-      <Navbar/>
-      <MainRoutes/>
+    <ThemeContext.Provider value = {{theme,setTheme}}>
+      <div id='app-wrapper' data-theme = {theme}>
+        <Navbar/>
+        <MainRoutes/>
+      </div>
+      
+      </ThemeContext.Provider>
     </>
   )
 }
