@@ -18,9 +18,15 @@ function Navbar(){
         navigator(`/movie/${movieImdbId}`);
     }
 
-    function handleDarkMode(){
-        setTheme(theme === 'dark' ? 'light' : 'dark');
-        console.log(theme);
+    function updateTheme(){
+       if (theme === 'dark'){
+            setTheme('light');
+            localStorage.setItem('app-theme','light');
+       }
+       else {
+            setTheme('dark');
+            localStorage.setItem('app-theme','dark');
+       }
     }
 
 
@@ -52,7 +58,7 @@ function Navbar(){
                 </div>
             </div>
           
-            <div onClick={handleDarkMode}>
+            <div onClick={updateTheme}>
                 <FontAwesomeIcon  className = 'theme-icon' icon={ theme === 'dark' ?faSun : faMoon} />
             </div>
         </div>
